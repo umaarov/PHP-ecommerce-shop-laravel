@@ -54,7 +54,7 @@ jobs:
       - name: Deploy code via SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} << 'EOF'
-            cd /var/www/html/your-laravel-app
+            cd /var/www/html/PHP-ecommerce-shop-laravel
             git pull origin main
             composer install --no-dev -o
             php artisan migrate --force
